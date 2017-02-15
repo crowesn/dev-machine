@@ -9,14 +9,14 @@ su - vagrant -c 'cd /home/vagrant && git clone https://github.com/jamesvanmil/do
 su - vagrant -c 'cd /home/vagrant/dotfiles && ./install_files.sh'
 
 # Install Vundle for Vim
-su - vagrant -c 'mkdir /home/vagrant/vim/bundle'
-su - vagrant -c 'git clone https://github.com/VundleVim/Vundle.vim.git /home/vagrant/vim/bundle/Vundle.vim'
+su - vagrant -c 'mkdir /home/vagrant/.vim/bundle'
+su - vagrant -c 'git clone https://github.com/VundleVim/Vundle.vim.git /home/vagrant/.vim/bundle/Vundle.vim'
 
 # Install tmux
-su - vagrant -c 'cd /home/vagrant && wget https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz'
-su - vagrant -c 'cd /home/vagrant && tar -xzf tmux-2.3.tar.gz'
-su - vagrant -c 'cd /home/vagrant/tmux-2.3 && ./configure && make'
-cd /home/vagrant/tmux-2.3 && make install
+su - vagrant -c 'cd /home/vagrant && wget https://github.com/tmux/tmux/releases/download/2.2/tmux-2.2.tar.gz'
+su - vagrant -c 'cd /home/vagrant && tar -xzf tmux-2.2.tar.gz'
+su - vagrant -c 'cd /home/vagrant/tmux-2.2 && ./configure && make'
+cd /home/vagrant/tmux-2.2 && make install
 
 # Install RVM
 su - vagrant -c 'gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3'
@@ -37,3 +37,6 @@ su - vagrant -c 'cd /home/vagrant && wget http://download.redis.io/releases/redi
 su - vagrant -c 'cd /home/vagrant && tar xzvf redis-2.8.3.tar.gz'
 su - vagrant -c 'cd /home/vagrant/redis-2.8.3 && make'
 cd /home/vagrant/redis-2.8.3 && sudo make install
+
+# Install ruby stuff
+su - vagrant -c 'gem install tmuxinator'
