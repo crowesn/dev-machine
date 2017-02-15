@@ -16,7 +16,7 @@ su - vagrant -c 'git clone https://github.com/VundleVim/Vundle.vim.git /home/vag
 su - vagrant -c 'cd /home/vagrant && wget https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz'
 su - vagrant -c 'cd /home/vagrant && tar -xzf tmux-2.3.tar.gz'
 su - vagrant -c 'cd /home/vagrant/tmux-2.3 && ./configure && make'
-cd /home/vagrant/tmux-2.2 && make install
+cd /home/vagrant/tmux-2.3 && make install
 
 # Install RVM
 su - vagrant -c 'gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3'
