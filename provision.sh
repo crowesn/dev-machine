@@ -2,7 +2,7 @@
 
 sudo yum update -y
 sudo yum install -y epel-release
-sudo yum install -y lynx mailx git unzip vim redis ImageMagick mysql-devel java-1.8.0-openjdk-devel nodejs gcc bzip2 kernel-devel dkms libevent-devel libxslt-devel libxml2-devel the_silver_searcher
+sudo yum install -y lynx mailx git unzip vim redis ImageMagick mysql-devel java-1.8.0-openjdk-devel nodejs gcc bzip2 kernel-devel dkms libevent-devel libxslt-devel libxml2-devel the_silver_searcher tree pgrep
 
 # Configure dotfiles
 su - vagrant -c 'cd /home/vagrant && git clone https://github.com/jamesvanmil/dotfiles.git'
