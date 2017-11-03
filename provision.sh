@@ -2,7 +2,7 @@
 
 sudo yum update -y
 sudo yum install -y epel-release
-sudo yum install -y lynx mailx git unzip vim redis ImageMagick mysql-devel java-1.8.0-openjdk-devel nodejs gcc bzip2 kernel-devel dkms libevent-devel libxslt-devel libxml2-devel the_silver_searcher tree pgrep ncurses-devel
+sudo yum install -y lynx mailx git unzip vim redis ImageMagick mysql-devel java-1.8.0-openjdk-devel nodejs gcc bzip2 kernel-devel dkms libevent-devel libxslt-devel libxml2-devel the_silver_searcher tree pgrep ncurses-devel libreoffice-base.x86_64
 
 # Configure dotfiles
 su - vagrant -c 'cd /home/vagrant && git clone https://github.com/crowesn/dotfiles.git'
@@ -13,9 +13,10 @@ su - vagrant -c 'mkdir /home/vagrant/.vim/bundle'
 su - vagrant -c 'git clone https://github.com/VundleVim/Vundle.vim.git /home/vagrant/.vim/bundle/Vundle.vim'
 
 # Install ffmpeg
-sudo rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
-sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-1.el7.nux.noarch.rpm
-sudo yum -y install ffmpeg ffmpeg-devel
+su - vagrant -c 'cd /opt'
+su - vagrant -c 'wget https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-64bit-static.tar.xz'
+su - vagrant -c 'tar -xf ffmpeg-git-64bit-static.tar.xz'
+su - vagrant -c 'ln -s /opt/ffmpeg-git-20170803-64bit-static/ffmpeg /usr/bin/ffmpeg'
 
 # Install tmux
 su - vagrant -c 'mkdir /home/vagrant/install'
